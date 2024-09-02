@@ -1,0 +1,66 @@
+import React, { useState, useEffect } from "react";
+
+const App = () => {
+    // Definindo o estado inicial do input de usuário como uma string vazia
+    const [usuario, setUsuario] = useState('');
+
+    // Definindo o estado inicial para contar o número de usuários
+    const [count, setCount] = useState(0);
+
+    // Definindo o estado inicial com uma lista de usuários já existentes
+    const [usuarios, setUsuarios] = useState(["teste1", "teste2", "teste3", "teste4"]);
+
+    // Função para adicionar um novo usuário à lista de usuários
+    const handleAddUser = () => {
+        // Adiciona o novo usuário ao array de usuários e reseta o input
+        setUsuarios([...usuarios, usuario]);
+        setUsuario('');  // Limpa o campo de input após adicionar
+    }
+
+    // useEffect é um hook que substitui alguns métodos de ciclo de vida em componentes funcionais.
+    // Este efeito será executado toda vez que o array 'usuarios' for atualizado
+    useEffect(() => {
+        // Atualiza o estado 'count' com o número atual de usuários na lista
+        setCount(usuarios.length);
+    }, [usuarios]);  // 'usuarios' é a dependência; sempre que 'usuarios' mudar, o efeito será executado.
+
+    return (
+        <div className="App">
+            <h1>Hello DIO!</h1>
+            {/* Exibe o número total de usuários, que é atualizado automaticamente pelo useEffect */}
+            <h3>Total: {count}</h3>
+            <div>
+                {/* Input para capturar o nome do novo usuário */}
+                <input
+                    value={usuario}  // O valor do input está ligado ao estado 'usuario'
+                    onChange={(e) => setUsuario(e.target.value)}  // Atualiza o estado 'usuario' conforme o input muda
+                />
+                {/* Botão para adicionar o usuário à lista */}
+                <button onClick={handleAddUser}>Adicionar</button>
+            </div>
+            {/* Quebra de linha errada. Deve ser um <hr /> para criar uma linha horizontal */}
+            <hr />  
+            {/* Renderiza a lista de usuários */}
+            {usuarios.map((item, index) => (
+                // Cada usuário é exibido dentro de um parágrafo
+                <p key={index}>{item}</p>
+            ))}
+        </div>
+    );
+}
+
+export default App;
+
+/*
+    Resumo sobre o ciclo de vida em React:
+
+    O ciclo de vida de um componente React refere-se às fases pelas quais o componente passa,
+    desde sua criação até sua remoção da interface. Essas fases incluem:
+    
+    - Montagem (Mounting): Quando o componente é criado e inserido no DOM.
+    - Atualização (Updating): Quando o componente é re-renderizado em resposta a mudanças no estado ou nas props.
+    - Desmontagem (Unmounting): Quando o componente é removido do DOM.
+
+    Em componentes funcionais, como o exemplo acima, o hook `useEffect` permite que você execute
+    efeitos colaterais em diferentes pontos do ciclo de vida, como durante a montagem ou atualização.
+*/

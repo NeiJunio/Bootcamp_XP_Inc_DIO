@@ -1,0 +1,28 @@
+ COMPONENTE FUNCIONAL
+
+ import Reac, { useState, useEffect } from "react"
+
+ const App = () => {
+     const [usuarios, setUsuarios] = useState(["teste1", "teste2", "teste3", "teste4"]);
+
+     /*
+     ao recarregar a página, após 3 seg sera inserido "teste5" no array e consequentemente na lista
+
+     useEffect(() => {
+         setTimeout(() => {
+             setUsuarios([...usuarios, "teste5"]);
+         }, 3000);
+     }, []); 
+     */
+
+     return (
+         <div className="App">
+             <h1>Hello DIO!</h1>
+             {usuarios.map((item) => (
+                 <p>{item}</p>
+             ))}
+         </div>
+     );
+ }
+
+ export default App;
