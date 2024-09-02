@@ -1,3 +1,7 @@
+(Visualizar no arquivo App.js)
+
+CICLO DE VIDA 
+
 import React, { useState, useEffect } from "react";
 
 const App = () => {

@@ -1,3 +1,5 @@
+ (Visualizar no arquivo App.js)
+ 
  COMPONENTE FUNCIONAL
 
  import Reac, { useState, useEffect } from "react"
