@@ -1,4 +1,4 @@
-(Visualizar no arquivo App.js)
+(Visualizar no arquivo App.js
 
  COMPONENTE DE CLASSE
 
