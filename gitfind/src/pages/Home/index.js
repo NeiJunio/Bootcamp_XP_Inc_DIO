@@ -24,13 +24,11 @@ function App() {
             const reposData = await fetch(`https://api.github.com/users/${user}/repos`);
             const newRepos = await reposData.json();
 
-
             if (newRepos.length) {
                 setRepos(newRepos);
             }
 
         }
-
     }
 
     return <div className="App">
@@ -64,7 +62,6 @@ function App() {
                         <hr />
                     </>
                 ) : null}
-
 
                 {repos?.length ? (
                     <div>
