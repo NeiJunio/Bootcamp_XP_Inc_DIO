@@ -36,13 +36,15 @@ export const BuscarInputContainer = styled.div`
     margin: 0 12px;
 
     display:flex;
+    align-items: center;
+    justify-content: center;
 `
 
 export const Menu = styled.a`
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 25px;
     color: #FFFFFF;
     margin-right: 12px;

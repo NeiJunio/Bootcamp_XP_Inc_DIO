@@ -1,14 +1,30 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+
+import bannerImage from '../../assets/banner.png'
 
 import Button from "../../components/Button";
+import Header from "../../components/Header";
 
+import { Container, Title, TitleHighlight, TextContent } from './styles';
 const Home = () => {
     return (
         <>
-            <h1>Home</h1>
-            <Button title={"Teste 1"} />
-            <Button variant="secondary" title={"Teste 1"} />
-            <Link to="/login">Ir para login</Link>
+            <Header />
+            <Container>
+            <div>
+                <Title>
+                    <TitleHighlight>
+                        Implemente <br />
+                    </TitleHighlight>
+                o seu futuro global agora!</Title>
+                <TextContent>Domine as tecnologias utilizadas pelas empresas mais inovadoras do mundo e encare seu novo
+                     desafio profissional, evoluindo em comunidade com os melhores experts.</TextContent>
+                <Button title="Começar agora" variant="secondary" />
+            </div>
+            <div>
+                <img src={bannerImage} alt="Imagem principal do site." />
+            </div>
+        </Container>
         </>
     )
 }
