@@ -1,26 +1,25 @@
 import {
     BrowserRouter as Router,
-    // Routes,
-    // Route,
-} from "react-router-dom";
-
-// import { GlobalStyle } from './styles/global';
-import Home from "./pages/home/page";
-import Login from "./pages/login/page";
-//   import { Feed } from "./pages/feed";
-
-//   import { Home } from './pages/home'
-
-
-
-function App() {
+    Routes,
+    Route,
+  } from "react-router-dom";
+  import { Feed } from "./pages/feed";
+  
+  import { Home } from './pages/home'
+  import { Login } from './pages/login'
+  import { GlobalStyle } from './styles/global';
+  
+  function App() {
     return (
-        <Router>
-            {/* <GlobalStyle /> */}
-            <Home />
-            <Login />
-        </Router>
+      <Router>
+       <GlobalStyle />
+       <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/feed" element={<Feed />} />
+       </Routes >
+      </Router>
     );
-}
-
-export default App;
+  }
+  
+  export default App;
